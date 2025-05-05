@@ -147,11 +147,10 @@ def main():
     mths_postop = []
 
     print("mths\tapplied load\tRes. stress, bone\tRes. stress, stem\tE, bone\t\tUTS, bone") #header for printed values
-    i = 0
-    while i < 360:
+    while months < 360:
         v = load_cell.get_weight()
         if v > 0: #check if there is weight on the sensor, only if there is, i is incremented
-            i+=1
+            months+=1
             #use functions to solve for variables
             val,months = sensor_data(months)
             force = get_force(val)
